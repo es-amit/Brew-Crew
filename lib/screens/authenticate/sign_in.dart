@@ -26,15 +26,15 @@ class _SignInState extends State<SignIn> {
       appBar: AppBar(
         backgroundColor: Colors.brown[400],
         elevation: 0.0,
-        title: Text("Sign in Brew Crew"),
+        title: const Text("Sign in Brew Crew"),
         actions: <Widget>[
           TextButton.icon(
             onPressed: (){
               widget.toggleView();
           }, 
-          icon: Icon(Icons.app_registration_rounded,
+          icon: const Icon(Icons.app_registration_rounded,
           color: Colors.black), 
-          label: Text("Register",
+          label: const Text("Register",
           style:TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
@@ -43,11 +43,11 @@ class _SignInState extends State<SignIn> {
         ],
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(vertical: 20.0,horizontal: 15.0),
+        padding: const EdgeInsets.symmetric(vertical: 20.0,horizontal: 15.0),
         child: Form(
           child: Column(
             children: <Widget>[
-              SizedBox(height: 20.0,),
+              const SizedBox(height: 20.0,),
               TextFormField(
                 onChanged: (val){
                   setState(() {
@@ -56,7 +56,7 @@ class _SignInState extends State<SignIn> {
                 },
 
               ),
-              SizedBox(height: 20.0,),
+              const SizedBox(height: 20.0,),
               TextFormField(
                 obscureText: true,
                 onChanged: (val){
@@ -65,7 +65,7 @@ class _SignInState extends State<SignIn> {
                   });
                 },
               ),
-              SizedBox(height: 20.0,),
+              const SizedBox(height: 20.0,),
               ElevatedButton(
                 
                 onPressed: () async{
@@ -73,7 +73,7 @@ class _SignInState extends State<SignIn> {
                   print(password);
                 }, 
                 child:
-                Text("Sign in",
+                const Text("Sign in",
                 style: TextStyle(
                   color: Colors.white
                 ),)
