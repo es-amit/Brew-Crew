@@ -2,6 +2,7 @@ import 'package:brew_crew/modals/user.dart';
 import 'package:brew_crew/screens/authenticate/authenticate.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'home/home.dart';
 
 class Wrapper extends StatefulWidget {
   const Wrapper({super.key});
@@ -15,8 +16,13 @@ class _WrapperState extends State<Wrapper> {
   Widget build(BuildContext context) {
 
     final user = Provider.of<MyUser?>(context);
-    print(user);
+    
     //return either home or authenticate
-    return Authenticate();
+    if(user == null){
+      return Authenticate();
+    }
+    else{
+      return Home();
+    }
   }
 }

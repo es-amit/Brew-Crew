@@ -1,5 +1,6 @@
 import 'package:brew_crew/modals/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/widgets.dart';
 
 class AuthService{
 
@@ -35,4 +36,12 @@ class AuthService{
   // register with email and password
 
   // logout
+  Future signOut() async{
+    try{
+      return await _auth.signOut();     //builtin method in firebase 
+    }catch(e){
+      print(e.toString());
+      return null;
+    }
+  }
 }
