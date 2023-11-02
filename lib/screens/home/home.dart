@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<List<Brew?>?>.value(
+    return StreamProvider<List<Brew>?>.value(
       initialData: null,
       value: DatabaseService(uid: '').brews, 
       child: Scaffold(
