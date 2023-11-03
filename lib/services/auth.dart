@@ -1,14 +1,13 @@
 import 'package:brew_crew/modals/user.dart';
 import 'package:brew_crew/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/widgets.dart';
-
 class AuthService{
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
   
   // user modal based on firebase
   MyUser? _userfromFirebase(User user) {
+    // ignore: unnecessary_null_comparison
     return user != null ? MyUser(uid: user.uid) : null;
   }
 
@@ -55,7 +54,7 @@ class AuthService{
 
       // create a new document for the user with uid
       await DatabaseService(uid: user!.uid).updateUserData('0', 'new crew member', 100);
-      return _userfromFirebase(user!);
+      return _userfromFirebase(user);
     }
     catch(e){
       print(e.toString());

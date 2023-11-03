@@ -3,7 +3,6 @@ import 'package:brew_crew/screens/home/brew_list.dart';
 import 'package:brew_crew/screens/home/settings_form.dart';
 import 'package:brew_crew/services/auth.dart';
 import 'package:brew_crew/services/database.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -20,7 +19,7 @@ class Home extends StatelessWidget {
       showModalBottomSheet(context: context, builder: (context){
         return Container(
           padding: const EdgeInsets.symmetric(vertical: 20.0,horizontal: 60.0),
-          child: SettingsForm(),
+          child: const SettingsForm(),
         );
       });
     }
@@ -60,7 +59,13 @@ class Home extends StatelessWidget {
               ),),)
           ],
         ),
-        body: const BrewList(),
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/coffee_bg.png'),
+              fit: BoxFit.cover)
+          ),
+          child: const BrewList()),
       ),
     );
   }

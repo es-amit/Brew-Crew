@@ -23,7 +23,7 @@ class _RegisterState extends State<Register> {
   String error ='';
   @override
   Widget build(BuildContext context) {
-    return loading ? Loading() :Scaffold(
+    return loading ? const Loading() :Scaffold(
       backgroundColor: Colors.brown[100],
       appBar: AppBar(
         backgroundColor: Colors.brown[400],

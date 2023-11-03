@@ -60,7 +60,7 @@ class _SettingsFormState extends State<SettingsForm> {
               // DropDown 
               DropdownButtonFormField<String>(
                 decoration: textInputDecoration,
-                value: _currentSugars == '' ? sugars[0] : userData!.sugars,
+                value: _currentSugars == '' ? sugars[0] : userData.sugars,
                 items: sugars.map((sugar) {
                   return DropdownMenuItem(
                     value: sugar,
@@ -86,7 +86,7 @@ class _SettingsFormState extends State<SettingsForm> {
     
     
     
-              SizedBox(height: 20.0,),
+              const SizedBox(height: 20.0,),
     
     
     
@@ -100,6 +100,7 @@ class _SettingsFormState extends State<SettingsForm> {
                         _currentName ?? userData!.name!,
                         _currentStrength ?? userData!.strength!
                       );
+                      // ignore: use_build_context_synchronously
                       Navigator.pop(context);
 
                   }
@@ -119,7 +120,7 @@ class _SettingsFormState extends State<SettingsForm> {
           ));
         }
         else{
-          return Loading();
+          return const Loading();
         }
         
       }

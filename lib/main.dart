@@ -17,6 +17,7 @@ Future<void> main() async{
   runApp(MyApp());
   }
 
+// ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       catchError: (_, __) => null,
       initialData: null,
       value: AuthService().user,
-      child: MaterialApp(
+      child: const MaterialApp(
         home: Wrapper(),
       ),
     );
